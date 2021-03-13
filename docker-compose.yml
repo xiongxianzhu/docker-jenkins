@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  jenkins:
+    image: 'jenkinsci/blueocean:latest'
+    container_name: jenkins
+    hostname: 192.168.1.103
+    restart: always
+    environment:
+      TZ: 'Asia/Shanghai'
+    ports:
+      - '18080:8080'
