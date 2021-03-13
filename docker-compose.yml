@@ -6,6 +6,7 @@ services:
     container_name: jenkins
     hostname: 192.168.1.103
     restart: always
+    # privileged: 'true'
     environment:
       TZ: 'Asia/Shanghai'
     ports:
@@ -14,5 +15,6 @@ services:
     env_file:
       - ./.env
     volumes:
+      # - './data:/var/jenkins_home'
       - '$JENKINS_HOME/data:/var/jenkins_home'
       - '/var/run/docker.sock:/var/run/docker.sock'
